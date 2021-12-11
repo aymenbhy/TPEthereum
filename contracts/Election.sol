@@ -2,13 +2,13 @@ pragma solidity ^0.5.0;
 
 contract Election{
 
+
     // Model a Candidate
 struct Candidate {
 uint id;
 string name;
 uint voteCount;
 }
-
 
 mapping(uint => Candidate) public candidates;
 
@@ -21,11 +21,13 @@ uint indexed _candidateId
 );
 
 constructor() public {
-addCandidate("Candidate 1");
-addCandidate("Candidate 2");
+addCandidate("Aymen");
+addCandidate("Ahmed");
+addCandidate("Farouk");
+addCandidate("Moatez");
 }
 
-function addCandidate (string memory _name) private {
+function addCandidate (string memory _name) public {
 candidatesCount ++;
 candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);
 }
